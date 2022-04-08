@@ -5,7 +5,7 @@ import (
 )
 
 // Solution1 容斥：3的倍数的和+5的倍数的和-15的倍数的和
-func (Solution) Solution1() {
+func main() {
 	var t int
 	fmt.Scanf("%d", &t)
 	for i := 0; i < t; i++ {
