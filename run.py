@@ -1,13 +1,11 @@
-#!/usr/bin/python3
+#!/opt/anaconda3/bin/python
 # -*- coding: UTF-8 -*-
 
-import argparse
+from common import *
+
 import os
 import traceback
 
-# colors
-red = '\033[0;31m{}\033[0m'
-green = '\033[0;32m{}\033[0m'
 
 lang_config = {
     "cpp": {
@@ -33,18 +31,6 @@ lang_config = {
 }
 
 
-def cprint(text, color):
-    print(color.format(text))
-
-
-def get_id_dir():
-    parser = argparse.ArgumentParser()
-    parser.add_argument(f'id', type=str)
-    parser.add_argument(f'-dir', type=str, required=False,
-                        default='./solutions')
-    return parser.parse_args().id, parser.parse_args().dir
-
-
 def get_lang(id, dir):
     p = os.path.join(dir, id, id)
     for suf in lang_config.keys():
@@ -63,7 +49,7 @@ def run(id, dir, lang):
 
 
 def main():
-    id, dir = get_id_dir()
+    id, dir = arg_id_dir()
 
     lang = get_lang(id, dir)
 

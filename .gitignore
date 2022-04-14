@@ -1,2 +1,5 @@
 /project_euler
 *.tmp
+*.html
+tmp.*
+__pycache__/
