@@ -3,3 +3,4 @@
 *.html
 tmp.*
 __pycache__/
+tmp/

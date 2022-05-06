@@ -127,7 +127,10 @@ def main():
 
 
 def generate_html(id, dir, *args):
-    with open(f'{os.path.join(dir,id)}/{id}.html', 'w') as f:
+    parent = f'{os.path.join(dir,id)}'
+    if not os.path.exists(parent):
+      os.mkdir(parent)
+    with open(f'{parent}/{id}.html', 'w') as f:
         f.write('''<!DOCTYPE html><html lang="zh-CN">''')
         f.write('''<body>''')
         for arg in args:
